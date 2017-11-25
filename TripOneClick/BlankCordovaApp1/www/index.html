@@ -46,7 +46,7 @@
                 <input type="text" name="password" placeholder="Contraseña" />
                 <p><a data-role="button" id="boton_registro" data-transition="pop" href="#iniciar_sesion">Registrarse</a></p>
                <p> <a data-role="button" id="volver" data-icon="back" data-transition="pop" href="#iniciar_sesion">Volver</a></p>
-                <img id="munyeco_registro" src="images/trip1_mod.png"/>
+                <img class="munyeco_registro" src="images/trip1_mod.png"/>
             </div>
         </div>
         <!--menu-->
@@ -80,13 +80,17 @@
             </div>
         </div>
 
-        <!--juego preguntas-->
         <div data-role="page" id="juego">
-            <p class="question">¿Tienes alguna alergia?</p>
-            <div class="content-answer">
-                <p><a class="answer" href="#tipo-comida" data-role="button" data-mini="true" data-transition="pop">Si</a></p>
-                <p><a class="answer" href="#tipo-comida" data-role="button" data-mini="true" data-transition="pop">No</a></p>
+            <div data-role="header" id="menu_header">
+                <img class="logo_restopags" src="images/trip1click copia.png" width="100" height="100" />
             </div>
+            <img class="munyeco_registro" src="images/trip1_mod.png" />
+            <p class="question">¿Tienes alguna alergia?</p>
+            <p><a class="answer" href="#tipo-comida" data-role="button" data-mini="true" data-transition="pop">Si</a></p>
+            <p><a class="answer" href="#tipo-comida" data-role="button" data-mini="true" data-transition="pop">No</a></p>
+
+            <p><a class="omitir" href="#main" data-role="button" data-mini="true" data-transition="pop">Omitir</a></p>
+
             <div class="progress">
                 <progress id="preg" max="100" value="0">
 
@@ -95,11 +99,16 @@
         </div>
 
         <div data-role="page" id="tipo-comida">
-            <p class="question">¿Que prefieres?</p>
-            <div class="content-answer">
-                <p><a class="answer" href="#t-libre" data-role="button" data-mini="true" data-transition="pop">Carne</a></p>
-                <p><a class="answer" href="#t-libre" data-role="button" data-mini="true" data-transition="pop">Pescado</a></p>
+            <div data-role="header" id="menu_header">
+                <img class="logo_restopags" src="images/trip1click copia.png" width="100" height="100" />
             </div>
+            <img class="munyeco3" src="images/trip3.png" />
+
+            <p class="question">¿Que prefieres?</p>
+
+            <p><a class="answer" href="#t-libre" data-role="button" data-mini="true" data-transition="pop">Carne</a></p>
+            <p><a class="answer" href="#t-libre" data-role="button" data-mini="true" data-transition="pop">Pescado</a></p>
+
             <div class="progress">
                 <progress id="preg" max="100" value="17">
 
@@ -108,11 +117,15 @@
         </div>
 
         <div data-role="page" id="t-libre">
-            <p class="question">¿Qué prefieres hacer en tu tiempo libre?</p>
-            <div class="content-answer">
-                <p><a class="answer" href="#tapa" data-role="button" data-icon="" data-iconpos="left" data-theme="a" data-mini="true" data-transition="pop">Visitar monumentos</a></p>
-                <p><a class="answer" href="#tapa" data-role="button" data-icon="" data-iconpos="left" data-theme="a" data-mini="true" data-transition="pop">Ir de compras</a></p>
+            <div data-role="header" id="menu_header">
+                <img class="logo_restopags" src="images/trip1click copia.png" width="100" height="100" />
             </div>
+            <img class="munyeco3" src="images/trip2.png" />
+            <p class="question">¿Qué hacer en tu tiempo libre?</p>
+
+            <p><a class="answer" href="#tapa" data-role="button" data-icon="" data-iconpos="left" data-theme="a" data-mini="true" data-transition="pop">Visitar monumentos</a></p>
+            <p><a class="answer" href="#tapa" data-role="button" data-icon="" data-iconpos="left" data-theme="a" data-mini="true" data-transition="pop">Ir de compras</a></p>
+
             <div class="progress">
                 <progress id="preg" max="100" value="33">
 
@@ -121,7 +134,11 @@
         </div>
 
         <div data-role="page" id="tapa">
-            <p class="question">¿Qué prefieres hacer en tu tiempo libre?</p>
+            <div data-role="header" id="menu_header">
+                <img class="logo_restopags" src="images/trip1click copia.png" width="100" height="100" />
+            </div>
+            <img class="munyeco_registro" src="images/trip1_mod.png" />
+            <p class="question">¿Qué hacer en tu tiempo libre?</p>
             <div class="content-answer">
                 <p><a class="answer" href="#t-libre2" data-role="button" data-icon="" data-iconpos="left" data-theme="a" data-mini="true" data-transition="pop">Tapear con los colegas</a></p>
                 <p><a class="answer" href="#t-libre2" data-role="button" data-icon="" data-iconpos="left" data-theme="a" data-mini="true" data-transition="pop">Comer sentado, por favor</a></p>
@@ -136,6 +153,10 @@
 
 
         <div data-role="page" id="t-libre2">
+            <div data-role="header" id="menu_header">
+                <img class="logo_restopags" src="images/trip1click copia.png" width="100" height="100" />
+            </div>
+            <img class="munyeco3" src="images/trip3.png" />
             <p class="question">¿Te gusta moverte?</p>
             <div class="content-answer">
                 <p><a class="answer" href="#transporte" data-role="button" data-icon="" data-iconpos="left" data-theme="a" data-mini="true" data-transition="pop">¡Por supuesto! </a></p>
@@ -149,9 +170,13 @@
         </div>
 
         <div data-role="page" id="transporte">
+            <div data-role="header" id="menu_header">
+                <img class="logo_restopags" src="images/trip1click copia.png" width="100" height="100" />
+            </div>
+            <img class="munyecos" src="images/trip1click-m2.png" />
             <p class="question">¿Cómo prefieres moverte?</p>
             <div class="content-answer">
-                <p><a class="answer" href="#gracias" data-role="button" data-icon="" data-iconpos="left" data-theme="a" data-mini="true" data-transition="pop">En el coche de san fernando</a></p>
+                <p><a class="answer" href="#gracias" data-role="button" data-icon="" data-iconpos="left" data-theme="a" data-mini="true" data-transition="pop">¡Andando que es gerundio!</a></p>
                 <p><a class="answer" href="#gracias" data-role="button" data-icon="" data-iconpos="left" data-theme="a" data-mini="true" data-transition="pop">A mi que me lleven</a></p>
                 <p><a class="answer" href="#gracias" data-role="button" data-icon="" data-iconpos="left" data-theme="a" data-mini="true" data-transition="pop">¡Viva el transporte público!</a></p>
             </div>
@@ -163,15 +188,14 @@
         </div>
 
         <div data-role="page" id="gracias">
-            <p class="gracias">¡Gracias por compartir tus gustos con nosotros!</p>
-            <div class="content-answer">
-                <p class="answer1"><a href="#main" data-role="button" data-icon="" data-iconpos="left" data-theme="a" data-mini="true" data-transition="slide">Continuar</a></p>
+            <div data-role="header" id="menu_header">
+                <img class="logo_restopags" src="images/trip1click copia.png" width="100" height="100" />
             </div>
-            <div class="progress">
-                <progress id="preg" max="100" value="100">
+            <p id="vivalavida">¡Eres un "viva la vida"!:</p>
+            <img class="munyeco-final" src="images/t1.png" />
+            <a data-role="btton" id="volver-juego" data-icon="back" data-transition="pop" href="#main">Volver</a>
 
-                </progress>
-            </div>
+
         </div>
 
     
