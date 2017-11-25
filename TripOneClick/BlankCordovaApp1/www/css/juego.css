@@ -1,6 +1,7 @@
 ﻿.question {
-    font-size: 30px;
-    font-weight: bold;
+
+    font-size: 20px;
+    font-weight: 300;
     background-color: #FFEB3B;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -8,25 +9,82 @@
     margin: 0 auto;
 }
 
+.munyecos {
+    display: block;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    height: 120px;
+    width: 170px;
+    margin-left: 25%;
+    margin-bottom: 10%;
+}
 
+.munyeco-final {
+    width: 230px;
+    height: 370px;
+    margin-left: 20%;
+}
+.munyeco3 {
+    display: block;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    height: 220px;
+    width: 190px;
+    margin-left: 25%;
+    margin-bottom: 5%;
+}
+
+#gracias{
+    background-color:yellow;
+    color: black;
+}
+
+#tit_gracias{
+
+    text-align: center;
+
+
+}
+
+#vivalavida {
+    text-align: center;
+}
+
+.omitir{
+    border-radius:5%;
+    width: 50px !important;    
+    float:right;
+    margin-right:5px;
+
+}
+
+.answer:hover {
+    background-color: #FFEB3B !important;
+}
+
+.answer:focus {
+    background-color: #FFEB3B !important;
+}
 
 .answer {
-    font-size: 15px !important;
+    font-weight: 800;
+    font-size: 22px !important;
     border-radius: 10% !important;
     width: auto !important;
-    height: 30px !important;
-    background-color: #FFEB3B !important;
-    float: left;
-    padding-left: 30px !important;
-    padding-right: 30px !important;
+    height: 45px !important;
+    vertical-align: central;
 }
 
-.content-answer {
-    display: inline-block;
-}
+
 
 .gracias {
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -67,4 +125,9 @@ progress::-webkit-progress-value {
 progress::-webkit-progress-bar {
     background-color: #D8D8D8;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+#cosa {
+    margin: 0 auto;
+    width: 20%;
 }
