@@ -9,7 +9,7 @@ h2 {
 
 .logo {
     margin: 0 auto;
-    padding: 15px;
+    padding: 50px;
     text-align: center;
     width: 210px;
     height: 80px;
@@ -22,7 +22,7 @@ h2 {
 }
 
 .peque {
-    font-size:8pt;
+    font-size:10pt;
     text-align:center;
 }
 hr {

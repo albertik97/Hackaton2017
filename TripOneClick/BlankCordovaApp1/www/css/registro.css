@@ -1,3 +1,10 @@
 ﻿#boton_registro {
     background-color: #FFEB3B;
 }
+
+#munyeco_registro {
+    padding-top: 50px;
+    display: block;
+    margin:0 auto;
+    align-content:center;
+}
