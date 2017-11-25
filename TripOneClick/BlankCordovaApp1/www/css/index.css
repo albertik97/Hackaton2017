@@ -31,6 +31,7 @@ body {
     font-size:12px;
 }
 
+
 .app {
     background: url(../images/cordova.png) no-repeat center top; 
     position: absolute;             
@@ -95,3 +96,4 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
