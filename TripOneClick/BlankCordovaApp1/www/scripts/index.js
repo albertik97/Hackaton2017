@@ -99,7 +99,7 @@ function computeTotalDistance(result) {
 
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
+        zoom: 16,
         center: { lat: 37.980589, lng: -0.684743 }
     });
 
@@ -112,7 +112,7 @@ function initMap() {
 
     var beachMarker;
     var imagen = 'images/trip1.png';
-    var pos = { lat: 37.976688, lng: -0.676087 };
+    var pos;
     if (navigator.geolocation) {
 
         navigator.geolocation.watchPosition(function (position) {
@@ -120,7 +120,6 @@ function initMap() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-            console.log("entro");
 
             if (beachMarker) {
                 beachMarker.setPosition(pos);
@@ -129,7 +128,7 @@ function initMap() {
                 beachMarker = new google.maps.Marker({
                     position: pos,
                     map: map,
-                    icon: imagen,
+                    //icon: imagen,
                     title: 'Tú posicion'
                 });
             }

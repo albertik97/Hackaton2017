@@ -73,11 +73,8 @@
                 <a href="#main" data-role="button" data-iconpos="notext" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
                 <h1>Mapa de destino</h1>
             </div>
-            <div id="map">
-                <script>
-                    initMap();
-                </script>
-            </div>
+            <div id="map"></div>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPzYctAFVHZ_Z9NILZw93AHOwEII3ZSZ8&callback=initMap"></script>
             <div data-role="footer" id="datos">
                 <p>Datos de la ruta</p>
             </div>
@@ -165,10 +162,6 @@
                     </progress>
                 </div>
             </div>
-
-    
-
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPzYctAFVHZ_Z9NILZw93AHOwEII3ZSZ8&callback=initMap"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
         <script type="text/javascript" src="scripts/index.js"></script>
