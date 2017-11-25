@@ -1,0 +1,15 @@
+﻿#map {
+    width: 100%;
+    height: 70%;
+    padding: 0;
+}
+
+#mapa_destinos {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.ui-content, .ui-content #full-height-div {
+    height: inherit;
+}
