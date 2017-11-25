@@ -1,0 +1,18 @@
+﻿#boton_registro {
+    background-color: #FFEB3B;
+}
+
+#munyeco_registro {
+    display: block;
+    margin: 0 auto;
+    bottom: 0;
+    left:0;
+    padding:0;
+    position:absolute;
+    height:300px;
+    width: 360px;
+}
+#volver {
+    float: right;
+    width:20%;
+}
