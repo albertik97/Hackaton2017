@@ -32,9 +32,9 @@
 
 
 
-function displayRoute(origen,destination, service, display) {
-
-    console.log(origen.lng);
+function displayRoute(origen, destination, service, display) {
+    console.log(origen.lat());
+    console.log(origen.lng());
             service.route({
                 origin: origen,
                 destination: destination,
@@ -70,8 +70,6 @@ function displayRoute(origen,destination, service, display) {
                         location: { lat: 37.976857, lng: -0.676264 },
                         stopover: false
                     }
-
-
 
                 ],
                 travelMode: 'WALKING',
@@ -139,8 +137,6 @@ function initMap() {
             /* map: map,*/
 
         });
-  
-  
        
         marker.setMap(map);
         
@@ -150,28 +146,38 @@ function initMap() {
             infowindow.setContent('<p>'+'Love Chocolate'+'</p>');
             infowindow.open(map, this);
        });
-     
-
     }
 
+    var beachMarker;
     if (navigator.geolocation) {
-
         navigator.geolocation.watchPosition(function (position) {
-            var pos = {
+            var pos_loc = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-        
-            displayRoute(new google.maps.LatLng(pos.lat, pos.lng),new google.maps.LatLng(37.976688, -0.676087), directionsService, directionsDisplay);
+
+            console.log("localizacion:" + pos_loc.lat);
+            console.log("localizacion:" + pos_loc.lng);
+
+            if (beachMarker) {
+                beachMarker.setPosition(pos_loc);
+            } else {
+
+                beachMarker = new google.maps.Marker({
+                    position: pos_loc,
+                    map: map,
+                    title: 'Tú posicion'
+                });
+            }
+           
         }, function (objPositionError) {
             // Procesar errores
         }, {
                 maximumAge: 75000,
                 timeout: 15000
         });
-         
     }
-
+    displayRoute(new google.maps.LatLng(37.976688, -0.676087), new google.maps.LatLng(37.976688, -0.676087), directionsService, directionsDisplay);
 }
 
 
