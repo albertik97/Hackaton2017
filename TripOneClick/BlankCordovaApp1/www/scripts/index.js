@@ -170,13 +170,13 @@ function initMap() {
                 beachMarker = new google.maps.Marker({
                     position: pos_loc,
                     map: map,
-                    icon:imagen,
+                    icon: imagen,
                     title: 'Tú posicion'
                 });
             }
            
         }, function (objPositionError) {
-            // Procesar errores
+            console.log("Algo ha salido mal con la posición");
         }, {
                 maximumAge: 75000,
                 timeout: 15000
