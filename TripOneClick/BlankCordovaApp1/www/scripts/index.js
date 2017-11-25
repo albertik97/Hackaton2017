@@ -30,8 +30,6 @@
 })();
 
 
-
-
 function displayRoute(origen, destination, service, display) {
     console.log(origen.lat());
     console.log(origen.lng());
@@ -164,10 +162,7 @@ function initMap() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-
-            console.log("localizacion:" + pos_loc.lat);
-            console.log("localizacion:" + pos_loc.lng);
-
+            var imagen = 'images/posicion.png';
             if (beachMarker) {
                 beachMarker.setPosition(pos_loc);
             } else {
@@ -175,6 +170,7 @@ function initMap() {
                 beachMarker = new google.maps.Marker({
                     position: pos_loc,
                     map: map,
+                    icon:imagen,
                     title: 'Tú posicion'
                 });
             }
@@ -188,7 +184,6 @@ function initMap() {
     }
     displayRoute(new google.maps.LatLng(37.976688, -0.676087), new google.maps.LatLng(37.976688, -0.676087), directionsService, directionsDisplay);
 }
-
 
 
 $.ajax({
