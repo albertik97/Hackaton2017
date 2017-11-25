@@ -1,0 +1,57 @@
+﻿h1 {
+    font-family: 'Raleway', sans-serif;
+    margin: 25px;
+}
+
+h2 {
+   text-transform:lowercase;
+}
+
+.logo {
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+    width: 210px;
+    height: 80px;
+    display: block;
+    margin: auto;
+}
+
+#boton_acceso {
+    background: #FFEB3B;
+}
+
+.peque {
+    font-size:8pt;
+    text-align:center;
+}
+hr {
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#facebook {
+    color: white;
+    text-shadow: none;
+    background-color: #3b5998;
+    vertical-align:central;
+}
+
+#twitter {
+    color: white;
+    text-shadow: none;
+    background-color: #00aced;
+}
+
+#instagram {
+    color:white;
+   text-shadow:none;
+    background-color: #8a3ab9;
+}
+
+.social {
+    height: 15px;
+    text-transform: capitalize;
+}
+

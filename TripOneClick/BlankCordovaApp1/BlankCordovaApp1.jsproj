@@ -43,7 +43,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>964d2e60-50bb-47a5-826e-c23bed2e4d6b</ProjectGuid>
+    <ProjectGuid>b2e9c02d-d3b1-4408-b33e-0e74e8a40d83</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
     <ProjectCapability Include="UseFileGlobs" />
@@ -82,7 +82,7 @@
     <ExcludedItems>bin;bld;platforms;node_modules;simulation;plugins</ExcludedItems>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="**\**" Exclude="**\platforms\**;**\bin\**;**\bld\**;**\node_modules\**;**\simulation\**;**\plugins\**;.gitignore;TripOneClick.*" />
+    <Content Include="**\**" Exclude="**\platforms\**;**\bin\**;**\bld\**;**\node_modules\**;**\simulation\**;**\plugins\**;.gitignore;BlankCordovaApp1.*" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="config.xml">
