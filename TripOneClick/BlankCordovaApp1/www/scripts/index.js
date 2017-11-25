@@ -103,26 +103,48 @@ function initMap() {
         center: { lat: 37.980589, lng: -0.684743 }
     });
 
-
-
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer({
         draggable: false,
         map: map,
         panel: document.getElementById('datos')
-
-
     });
 
+    var beachMarker;
+    var imagen = 'images/trip1.png';
+    var pos = { lat: 37.976688, lng: -0.676087 };
+    if (navigator.geolocation) {
 
+        navigator.geolocation.watchPosition(function (position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            console.log("entro");
 
-    displayRoute(new google.maps.LatLng(37.980589, -0.684743), new google.maps.LatLng(37.976688, -0.676087), directionsService,
-        directionsDisplay);
+            if (beachMarker) {
+                beachMarker.setPosition(pos);
+            } else {
+
+                beachMarker = new google.maps.Marker({
+                    position: pos,
+                    map: map,
+                    icon: imagen,
+                    title: 'Tú posicion'
+                });
+            }
+            
+
+        }, function (objPositionError) {
+            // Procesar errores
+        }, {
+                maximumAge: 75000,
+                timeout: 15000
+
+            });
+    }
+    displayRoute(new google.maps.LatLng(pos.lat, pos.lng), new google.maps.LatLng(37.976688, -0.676087), directionsService, directionsDisplay);
 }
-
-
-
-
 
 
 
@@ -140,10 +162,6 @@ $.ajax({
                 [37.976231, -0.683207],
                 [37.974582, -0.678150],
                 [37.980589, -0.684743]
-
-
-
-
             ]
 
 
