@@ -32,60 +32,82 @@
 
 
 
+function displayRoute(origen,destination, service, display) {
+
+    console.log(origen.lng);
+            service.route({
+                origin: origen,
+                destination: destination,
+                waypoints: [
+                    {
+                        location: { lat: 37.980001, lng: -0.684123 }, //lat: 37.975110, lng: -0.678840
+                        stopover: false
+                    }, {
+                        location: { lat: 37.978101, lng: -0.684616 }, // lat: 37.976475, lng: -0.680134
+                        stopover: false
+                    }, {
+                        location: { lat: 37.976231, lng: -0.683207 },
+                        stopover: false
+                    }, {
+                        location: { lat: 37.976261, lng: -0.681233 }, // lat: 37.974582, lng: -0.678150 
+                        stopover: false
+                    }, {
+                        location: { lat: 37.976475, lng: -0.680134 }, //lat: 37.980589, lng: -0.684743
+                        stopover: false
+                    }, {
+                        location: { lat: 37.975793, lng: -0.678776 }, // lat: 37.976688, lng: -0.676087
+                        stopover: false
+                    }, {
+                        location: { lat: 37.975110, lng: -0.678840 }, //lat: 37.976532, lng: -0.677199
+                        stopover: false
+                    }, {
+                        location: { lat: 37.974582, lng: -0.678150 }, // lat: 37.976857, lng: -0.676264 dddd
+                        stopover: false
+                    }, {
+                        location: { lat: 37.976532, lng: -0.677199 }, //lat: 37.976857, lng: -0.676264
+                        stopover: false
+                    }, {
+                        location: { lat: 37.976857, lng: -0.676264 },
+                        stopover: false
+                    }
 
 
 
+                ],
+                travelMode: 'WALKING',
+                avoidTolls: true
+            }, function (response, status) {
+                if (status === 'OK') {
+                    display.setDirections(response);
+                } else {
+                    alert('Could not display directions due to: ' + status);
+                }
+            });
 
-function displayRoute(origin, destination, service, display) {
-    service.route({
-        origin: origin,
-        destination: destination,
-        waypoints: [
-            {
-                location: { lat: 37.980001, lng: -0.684123 }, //lat: 37.975110, lng: -0.678840
-                stopover: true
-            }, {
-                location: { lat: 37.978101, lng: -0.684616 }, // lat: 37.976475, lng: -0.680134
-                stopover: true
-            }, {
-                location: { lat: 37.976231, lng: -0.683207 },
-                stopover: true
-            }, {
-                location: { lat: 37.976261, lng: -0.681233 }, // lat: 37.974582, lng: -0.678150 
-                stopover: true
-            }, {
-                location: { lat: 37.976475, lng: -0.680134 }, //lat: 37.980589, lng: -0.684743
-                stopover: true
-            }, {
-                location: { lat: 37.975793, lng: -0.678776 }, // lat: 37.976688, lng: -0.676087
-                stopover: true
-            }, {
-                location: { lat: 37.975110, lng: -0.678840 }, //lat: 37.976532, lng: -0.677199
-                stopover: true
-            }, {
-                location: { lat: 37.974582, lng: -0.678150 }, // lat: 37.976857, lng: -0.676264 dddd
-                stopover: true
-            }, {
-                location: { lat: 37.976532, lng: -0.677199 }, //lat: 37.976857, lng: -0.676264
-                stopover: true
-            }, {
-                location: { lat: 37.976857, lng: -0.676264 },
-                stopover: true
-            }
-
-
-
-        ],
-        travelMode: 'WALKING',
-        avoidTolls: true
-    }, function (response, status) {
-        if (status === 'OK') {
-            display.setDirections(response);
-        } else {
-            alert('Could not display directions due to: ' + status);
-        }
-    });
 }
+
+
+var map;
+var marker;
+var i;
+var infowindow;
+
+var lat = [
+    /*[37.980589, -0.684743],*/
+    [37.980001, -0.684123],
+    [37.978101, -0.684616],
+    [37.976231, -0.683207],
+    [37.976261, -0.681233],
+    [37.976475, -0.680134],
+    [37.975793, -0.678776],
+    [37.975110, -0.678840],
+    [37.974582, -0.678150],
+    [37.976532, -0.677199],
+    [37.976857, -0.676264]/*,
+    	[37.976688, -0.676087]*/
+];
+
+
 
 function computeTotalDistance(result) {
     var total = 0;
@@ -99,7 +121,7 @@ function computeTotalDistance(result) {
 
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
+        zoom: 14,
         center: { lat: 37.980589, lng: -0.684743 }
     });
 
@@ -110,9 +132,28 @@ function initMap() {
         panel: document.getElementById('datos')
     });
 
-    var beachMarker;
-    var imagen = 'images/trip1.png';
-    var pos;
+
+    for (i = 0; i < lat.length; i++) {
+         marker = new google.maps.Marker({
+            position: { lat: lat[i][0], lng: lat[i][1] },
+            /* map: map,*/
+
+        });
+  
+  
+       
+        marker.setMap(map);
+        
+        var infowindow = new google.maps.InfoWindow();
+
+        google.maps.event.addListener(marker,'click', function () {
+            infowindow.setContent('<p>'+'Love Chocolate'+'</p>');
+            infowindow.open(map, this);
+       });
+     
+
+    }
+
     if (navigator.geolocation) {
 
         navigator.geolocation.watchPosition(function (position) {
@@ -120,29 +161,17 @@ function initMap() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-
-            if (beachMarker) {
-                beachMarker.setPosition(pos);
-            } else {
-
-                beachMarker = new google.maps.Marker({
-                    position: pos,
-                    map: map,
-                    //icon: imagen,
-                    title: 'Tú posicion'
-                });
-            }
-            
-
+        
+            displayRoute(new google.maps.LatLng(pos.lat, pos.lng),new google.maps.LatLng(37.976688, -0.676087), directionsService, directionsDisplay);
         }, function (objPositionError) {
             // Procesar errores
         }, {
                 maximumAge: 75000,
                 timeout: 15000
-
-            });
+        });
+         
     }
-    displayRoute(new google.maps.LatLng(pos.lat, pos.lng), new google.maps.LatLng(37.976688, -0.676087), directionsService, directionsDisplay);
+
 }
 
 
