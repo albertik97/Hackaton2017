@@ -1,0 +1,46 @@
+﻿
+
+#pre_h{
+
+    background-color: white;
+
+}
+
+#pre-decision {
+    background-color: white;
+}
+
+
+#sel, #empezar{
+    background-color: #FFEB3B;
+    color: black;
+    text-shadow: none;
+    border: none;
+    border-radius: 10%;
+    font-size: 1em;
+    box-shadow: 3px 3px 1px rgba(0,0,0,0.1);
+}
+
+#sel-button {
+    background-color: #FFEB3B;
+    color: black;
+}
+
+#destino{
+
+    text-align: center;
+
+}
+
+#header_pre_map{
+
+    border: none;
+
+}
+
+#yepa {
+    background-color: black;
+    color: black;
+    padding: 2em;
+    margin-top: 50%;
+}

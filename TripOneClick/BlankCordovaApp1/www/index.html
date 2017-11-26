@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="css/mapa.css">
         <link rel="stylesheet" type="text/css" href="css/menu.css">
         <link rel="stylesheet" type="text/css" href="css/juego.css">
+        <link rel="stylesheet" type="text/css" href="css/prepag.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -57,7 +58,7 @@
             <div data-role="content">
                 <div data-role="controlgroup" data-type="horizontal" class="centrar">
                     <p><a id="gyp" href="#juego" data-role="button" data-icon="tag" data-iconpos="left" data-theme="b" data-mini="true" data-transition="slide">Dime quién soy</a></p>
-                    <p><a id="iti" href="#mapa_destinos" data-role="button" data-icon="location" data-iconpos="left" data-theme="b" data-mini="true" data-transition="slide">Ver itinerario </a></p>
+                    <p><a id="iti" href="#pre-decision" data-role="button" data-icon="location" data-iconpos="left" data-theme="b" data-mini="true" data-transition="slide">Ver itinerario </a></p>
                     <p><a id="conf" href="#conf" data-role="button" data-icon="gear" data-iconpos="left" data-theme="b" data-mini="true" data-transition="slide">Configuración</a></p>
                     <p><a id="ini" href="#iniciar_sesion" data-role="button" data-icon="power" data-iconpos="left" data-theme="b" data-mini="true" data-transition="slide"></a></p>
                 </div>
@@ -67,6 +68,43 @@
 
             </div>
         </div>
+
+        <!--pre-mapa-->
+        <div id="pre-decision" data-role="page" data-theme="a">
+            <div data-role="header_pre_map" data-theme="b" id="pre_h">
+                <img class="logo_restopags" src="images/trip1click copia.png" width="100" height="100" />
+                
+            </div>
+            
+            <p id="destino">¿A dónde vas?</p>
+            
+            <select id="sel">
+                <option value="">Duración del itinerario</option>
+                <optgroup label="Sólo estaré un día">
+                    
+                    <option value="volvo">Por la mañana</option>
+                    <option value="saab">Por la tarde</option>
+                    <option value="yeo">Todo el día</option>
+                </optgroup>
+                <optgroup label="Estaré más de un día">
+                    <option value="2">Dos días</option>
+                    <option value="3">Tres días</option>
+                    <option value="4">Alrededor de una semana</option>
+                </optgroup>
+            </select>
+            <p><a href="#mapa_destinos" id="empezar" data-role="button" data-mini="true" data-transition="pop">Empezar</a></p>
+            <div data-role="footer" id="yepa">
+               
+                
+            </div>
+        </div>
+
+
+
+
+
+
+
         <!--mapa-->
         <div id="mapa_destinos" data-role="page" data-theme="a">
             <div data-role="header" data-theme="b">
@@ -201,7 +239,7 @@
             <div data-role="header" id="menu_header">
                 <img class="logo_restopags" src="images/trip1click copia.png" width="100" height="100" />
             </div>
-            <p id="vivalavida">¡Eres un "viva la vida"!:</p>
+            <p id="vivalavida">¡Eres un "viva la vida"!</p>
             <img class="munyeco-final" src="images/t1.png" />
             <a data-role="button" id="volver-juego" data-icon="back" data-transition="pop" href="#main">Volver</a>
 
