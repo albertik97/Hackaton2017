@@ -21,6 +21,12 @@
     box-shadow: 3px 3px 1px rgba(0,0,0,0.1);
 }
 
+#empezar{
+
+    margin-top: 12em;
+
+}
+
 #sel-button {
     background-color: #FFEB3B;
     color: black;
@@ -42,5 +48,5 @@
     background-color: black;
     color: black;
     padding: 2em;
-    margin-top: 100%;
+    margin-top: 50%;
 }
